@@ -1,16 +1,13 @@
 import pymorphy2.analyzer
 from pymorphy2 import MorphAnalyzer
 
-from service import check_apli, check_key
 from constant import var
+from service import check_apli, check_key
 
 
 @check_apli
 @check_key
 def func(key) -> dict[str, str | int | list[str]]:
-    if key[0].isdigit():
-        key: list[str] = key[1:]
-
     morph: MorphAnalyzer = MorphAnalyzer(lang="ru")
 
     result: dict[str, str | int | list[str]] = {

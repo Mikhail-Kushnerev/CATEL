@@ -1,5 +1,10 @@
 import re
+
 from pymorphy2.tagset import OpencorporaTag
+
+
+HOST: str = "localhost"
+PORT: int = 2000
 
 
 HDRS: str = "HTTP/1.1 200 OK\r\nContent-Type: application/json; charset=utf-8\r\n\r\n"

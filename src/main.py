@@ -1,5 +1,5 @@
-from server import run
+from server import build_server
 
 
 if __name__ == "__main__":
-    run()
+    build_server()

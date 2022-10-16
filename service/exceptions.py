@@ -1,14 +1,28 @@
 class WrongType(Exception):
-    pass
+
+    def __init__(self, message):
+        self.message = message
 
 
 class NoPass(Exception):
-    pass
+
+    def __init__(self, message):
+        self.message = message
 
 
 class NoKeySentence(Exception):
-    pass
+
+    def __init__(self, message):
+        self.message = message
+
+
+class NoTarget(Exception):
+
+    def __init__(self, message):
+        self.message = message
 
 
 class NoRussian(Exception):
-    pass
+
+    def __init__(self, message):
+        self.message = message
