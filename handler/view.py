@@ -21,7 +21,7 @@ def func(key) -> dict[str, str | int | list[str]]:
     for i in var:
         variant: str = first_word.inflect({i, "sing"}).word
         coll.add(variant)
-
+    coll -= {key[0]}
     result["first_declined_word"].extend(list(coll))
 
     match len(key):

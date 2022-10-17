@@ -2,6 +2,20 @@
 
 ## Описание
 
+## Содержание
+
+- [Технологии](#технологии)
+- <a href="#structure">Структура проекта</a>
+- [Запуск](#запуск)
+- <a href="#table">Результат работы</a>
+- [Авторы](#авторы)
+
+## Технологии
+
+- Python
+- Socket
+- Pymorphy2
+
 <details>
   <summary>
     <h2 id="structure">Структура проекта</h2>
@@ -10,27 +24,26 @@
 ```python
 CATEL:.
 |   .gitignore
-|   constant.py
+|   constant.py  <-- Значения по умолчанию
 |   LICENSE
 |   README.md
-|   test.py
-|   tree.txt
+|   test.py  <-- Тестирование собственных запросов
 |           
 +---handler
-|   |   view.py
+|   |   view.py  <-- Обработчик запроса
 |   |   __init__.py
 |           
 +---server
-|   |   connect.py
+|   |   connect.py  <-- Запуск сервера
 |   |   __init__.py
 |           
 +---service
-|   |   exceptions.py
-|   |   utils.py
+|   |   exceptions.py  <-- Кастомные исключения
+|   |   utils.py  <-- Проверка запроса
 |   |   __init__.py
 |           
 +---src
-|   |   main.py
+|   |   main.py  <-- Точка входа
 |   |   __init__.py
 |       
 +---tests
@@ -50,11 +63,67 @@ python -m venv venv
 ```
 
 - Установите зависимости
+
 ```python
 pip install -r requirements.txt
 ```
 
+- Из директории **src/** (см. <a href="#structure">дерево проекта</a>) запустите `main.py` файл
+
 - В главной директории добавлен файл (см. <a href="#structure">дерево проекта</a>) для тестирования личных запрос.  
 Запросы также можно тестировать в **Postman**, указав **Headers** ключ.
 
-</details>
+[содержание](#содержание)
+
+
+
+<table
+  id="table"
+  align="center"
+>
+  <thaed>
+    <tr>
+      <th colspan="2">
+        Результат работы
+      </th>
+    </tr>
+  </thaed>
+  <tbody>
+    <tr>
+      <td align="center">
+        <code>try_me.py</code>
+      </td>
+      <td align="center">
+        <h5>Postman</h5>
+      </td>
+    </tr>
+      <td>
+        <code >
+          requests: {"sentence": "любой текст который сюда напишем"}
+        </code>
+        <br><br>
+        <img
+          src="https://raw.githubusercontent.com/Mikhail-Kushnerev/image/main/CATEL/try_me.png"
+        >
+      </td>
+      <td>
+        <code>
+          requests: {"sentence": "сильное желание в горы подняться"}
+        </code>
+        <br><br>
+        <img
+          align="center"
+          src="https://raw.githubusercontent.com/Mikhail-Kushnerev/image/main/CATEL/postman.png"
+        >
+      </td>
+    <tr>
+    </tr>
+  </tbody>
+</table>
+
+[содержание](#содержание)
+____
+## Авторы
+
+- Автор: [САТЕЛ](https://satel.org/)
+- Разработчик: [Mikhail Kushnerev](https://github.com/Mikhail-Kushnerev)

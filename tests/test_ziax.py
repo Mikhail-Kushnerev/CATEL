@@ -5,14 +5,6 @@ from http import HTTPStatus
 from unittest import TestCase
 
 
-TRACEBACKS: tuple[str, ...] = (
-    "В тексте присутсвует латиница",
-    "В данных нет ключа 'sentence'",
-    "Неверный Content-Type"
-    "Нет ключа"
-)
-
-
 class TestConnect(TestCase):
 
     def setUp(self):
@@ -40,14 +32,48 @@ class TestConnect(TestCase):
                 "key": "ziax"
             }
         )
-        self.assertEqual(response.json(), {"details": "В данных нет ключа 'sentence'"})
+        self.assertEqual(response.json(),
+                         {
+                             "details": "В данных нет ключа 'sentence'"
+                         }
+                         )
         response = requests.post(
             url=f"http://{self.host}:{self.port}",
             headers={
                 "Content-Type": "application/json",
                 "key": "ziax"
             },
-            data=json.dumps({"sentence": ""}).encode("utf-8")
+            data=json.dumps(
+                {
+                    "sentence": ""
+                }
+            ).encode("utf-8")
         )
-        self.assertEqual(response.json(), {"details": "В данных нет ключа 'sentence'"})
+        self.assertEqual(response.json(), {"details": "Пустая фраза"})
 
+    def test_post_result(self):
+        response = requests.post(
+            url=f"http://{self.host}:{self.port}",
+            headers={
+                "Content-Type": "application/json",
+                "key": "ziax"
+            },
+            data=json.dumps(
+                {
+                    "sentence": "1 ! + сильный / * плыву"
+                }
+            ).encode("utf-8")
+        )
+        self.assertEqual(
+            set(response.json()['first_declined_word']),
+            set(
+                [
+                    'сильный',
+                    'сильного',
+                    'сильный',
+                    'сильным',
+                    'сильном',
+                    'сильному'
+                ]
+            )
+        )
