@@ -2,7 +2,7 @@ import pymorphy2.analyzer
 from pymorphy2 import MorphAnalyzer
 
 from constant import var
-from service import check_apli, check_key, logger
+from src.service import check_apli, check_key, logger
 
 
 @check_apli

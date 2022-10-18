@@ -1,8 +1,8 @@
 import json
 import socket
 
-from handler import func
-from service import (
+from src.handler import func
+from src.service import (
     NoPass,
     NoKeySentence,
     NoRussian,

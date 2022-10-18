@@ -3,8 +3,8 @@ import re
 from typing import Callable, Any, Match
 
 from constant import PATTERN, PASSWORD, CONTENT
-from service import logger
-from service.exceptions import (
+from src.service import logger
+from src.service.exceptions import (
     NoPass,
     NoKeySentence,
     WrongType,

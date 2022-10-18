@@ -34,27 +34,28 @@ CATEL:.
 |   constant.py  <-- Значения по умолчанию
 |   LICENSE
 |   README.md
+|   requirements.txt
 |   try_me.py  <-- Тестирование собственных запросов
-|           
-+---handler
-|   |   view.py  <-- Обработчик запроса
-|   |   __init__.py
-|           
-+---server
-|   |   connect.py  <-- Запуск сервера
-|   |   __init__.py
-|           
-+---service
-|   |   exceptions.py  <-- Кастомные исключения
-|   |   log.py  <-- Логгер
-|   |   utils.py  <-- Проверка запроса
-|   |   __init__.py
-|           
+| 
 +---src
 |   |   main.py  <-- Точка входа
 |   |   __init__.py
-|       
-+---tests
+|   |   
+|   +---handler
+|   |   |   view.py  <-- Обработчик запроса
+|   |   |   __init__.py
+|   |           
+|   +---server
+|   |   |   connect.py  <-- Запуск сервера
+|   |   |   __init__.py
+|   |           
+|   +---service
+|   |   |   exceptions.py  <-- Кастомные исключения
+|   |   |   log.py  <-- Логгер
+|   |   |   utils.py  <-- Проверка запроса
+|   |   |   __init__.py
+|           
++---tests  <-- Тесты
 |   |   test_ziax.py
 |   |   __init__.py
 

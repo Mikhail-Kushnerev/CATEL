@@ -1,4 +1,4 @@
-from server import build_server
+from src.server import build_server
 
 
 if __name__ == "__main__":
